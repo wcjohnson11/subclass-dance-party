@@ -20,19 +20,33 @@ $(document).ready(function(){
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
-
     var dancer = dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+
     $('body').append(dancer.$node);
+
   });
+
+    var bodyHeight = $('body').height();
+    var bodyWidth = $('body').width();
+
+  $('.shuffleButton').click(function(){
+    $.each(dancers, function(dancer){ this.setPosition((bodyHeight/2)* Math.random(), ((bodyWidth/2)*Math.random())); } );
+  });
+
   $('.lineupButton').click(function(){
-    $.each(dancers, function(dancer){ this.setPosition('250px'); } );
+    $.each(dancers, function(dancer){ this.setPosition('375px'); } );
   });
+
   $('.getbackButton').click(function(){
     $.each(dancers, function(dancer){ this.setPosition(this.height); } );
   });
+
+  $('span').hover( function(){ $(this).toggleClass("expand")
+  });
+
 });
 

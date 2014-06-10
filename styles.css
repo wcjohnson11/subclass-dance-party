@@ -1,6 +1,6 @@
 body, html{
   height:100%;
-  background-image:url('techno.jpg');
+  background-image:url('technoo.gif');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -29,4 +29,18 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+.yellow{
+ border:10px solid yellow;
+}
+.green{
+ border:10px solid Aqua;
+}
+.expand{
+  border:40px;
+  border-radius:40px;
+}
+
+.pink{
+  border:10px solid DeepPink;
 }

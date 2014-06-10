@@ -16,6 +16,8 @@ var makeBounceDancer = function(top, left, timeBetweenSteps){
       // See http://api.jquery.com/category/effects/ for this and
       // other effects you can use on a jQuery-wrapped html tag.
       this.$node.toggleClass("bounce");
+      this.$node.toggleClass("yellow");
+
     };
   return bounceDancer;
 };
