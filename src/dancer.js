@@ -10,6 +10,8 @@ var makeDancer = function(top, left, timeBetweenSteps){
   this.step();
   //set position method(top,left)
   this.setPosition(top,left);
+  //add Dancer to the dancers array
+  dancers.push(this);
 };
 
 
@@ -18,7 +20,9 @@ var makeDancer = function(top, left, timeBetweenSteps){
   makeDancer.prototype.step = function(){
     // the basic makeDancer doesn't do anything interesting at all on each step,
     // it just schedules the next step
+    // debugger;
     var main = this;
+    //var stepper = this.step.bind(this);
     setTimeout(_.bind(this.step, main), this._timeBetweenSteps);
   };
 
