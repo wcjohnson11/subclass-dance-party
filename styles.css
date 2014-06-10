@@ -43,4 +43,5 @@ body, a:link, a:visited, a:active{
 
 .pink{
   border:10px solid DeepPink;
+  border-radius: 0px;
 }
