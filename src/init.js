@@ -31,5 +31,8 @@ $(document).ready(function(){
   $('.lineupButton').click(function(){
     $.each(dancers, function(dancer){ this.setPosition('250px'); } );
   });
+  $('.getbackButton').click(function(){
+    $.each(dancers, function(dancer){ this.setPosition(this.height); } );
+  });
 });
 
