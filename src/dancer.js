@@ -1,3 +1,4 @@
+window.dancers = [];
 var makeDancer = function(top, left, timeBetweenSteps){
 
 // Creates and returns a new dancer object that can step

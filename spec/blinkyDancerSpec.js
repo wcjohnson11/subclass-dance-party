@@ -1,4 +1,5 @@
 describe("blinkyDancer", function() {
+  debugger;
 
   var blinkyDancer;
   var timeBetweenSteps = 100;
