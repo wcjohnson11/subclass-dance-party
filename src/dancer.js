@@ -1,6 +1,7 @@
 window.dancers = [];
 var makeDancer = function(top, left, timeBetweenSteps){
   this.height = top;
+  this.left = left;
 // Creates and returns a new dancer object that can step
   //node constructor
   this.$node = $('<span class="dancer"></span>');

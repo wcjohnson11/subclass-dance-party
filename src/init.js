@@ -48,5 +48,12 @@ $(document).ready(function(){
   $('span').hover( function(){ $(this).toggleClass("expand")
   });
 
+  function fadeIn(){
+    $('.bg').toggleClass("slideExpandUp");
+  };
+  setInterval(fadeIn(),8000);
+
+
+
 });
 
