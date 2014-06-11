@@ -58,11 +58,18 @@ $(document).ready(function(){
     sortedDancers = _.sortBy(dancers,function(dancer, index, dancers){
     return Number(Math.sqrt(dancer.height * dancer.height + dancer.left * dancer.left).toFixed(3));
     });
-    if(sortedDancers.length >=2){
-      var now = sortedDancers[i];
-      var next = sortedDancers[i+1];
-      now.height = next.height;
-      now.left = next.left;
+    for (var i = 0; i < sortedDancers.length; i +=2){
+        var now = sortedDancers[i];
+        var next = sortedDancers[i+1];
+        var randomHeight = Math.floor(Math.random()*bodyHeight);
+        var randomWidth = Math.floor(Math.random()*bodyWidth);
+        now.setPosition(randomHeight, randomWidth);
+        next.setPosition(randomHeight, randomWidth);
+        if (now === undefined){
+          now.addClass('expand');
+        } else if (next === undefined){
+          next.addClass('expand');
+        }
     }
   });
 
