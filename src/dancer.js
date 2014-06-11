@@ -57,8 +57,17 @@ var makeDancer = function(top, left, timeBetweenSteps){
         connections[thisId].hyp = hyp(thisNode, dancer);*/
         connections[thisId][dancer.id] = hyp(thisNode, dancer);
       }
-    });
-    var lowest = _.min(connections[thisNode], function(o){return o.hyp;});
-    return lowest;
+    }); debugger;
+    var lowest = 100000000000000000000000;
+    var dancersIdx = null;
+    for (var otherNode in connections[thisId]) {
+      if (connections[thisId][otherNode] < lowest) {
+        lowest = connections[thisId][otherNode];
+        dancersIdx = otherNode;
+      }
+    }
+    return dancersIdx;
+    // var lowest = _.min(connections[thisNode], function(o){return o.hyp;});
+    // return lowest;
   };
 

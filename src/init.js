@@ -49,9 +49,14 @@ $(document).ready(function(){
     $.each(dancers, function(dancer){ this.setPosition(this.height); } );
   });
 
-  $('span').hover( function(){ $(this).toggleClass("expand")
-  });
+/*  $('.dancer').click(
+   function(){ debugger; $(this).removeClass();
+   $(this).addClass('expand');
+  });*/
 
+  $('body').on('click', '.dancer', function() {
+    $(this).toggleClass('expand');
+  });
 
   //naive pairing function
   $('.pairupButton').click(function(){

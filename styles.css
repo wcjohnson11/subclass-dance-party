@@ -47,9 +47,10 @@ body, a:link, a:visited, a:active{
 
 .pink{
   border:10px solid DeepPink;
-  border-radius: 0px;
+  border-radius: 8em;
 }
 .expand{
-  border:100px;
-  border-radius:100px;
+  border-width:8em;
+  border-radius: 8em;
+  position:absolute;
 }
