@@ -32,9 +32,13 @@ $(document).ready(function(){
 
     var bodyHeight = $('body').height();
     var bodyWidth = $('body').width();
+    var randomHeight = Math.floor(Math.random()*bodyHeight);
+    var randomWidth = Math.floor(Math.random()*bodyWidth);
+
+  //jQuery click/hover functions
 
   $('.shuffleButton').click(function(){
-    $.each(dancers, function(dancer){ this.setPosition((bodyHeight/2)* Math.random(), ((bodyWidth/2)*Math.random())); } );
+    $.each(dancers, function(dancer){ this.setPosition(Math.floor(Math.random()*bodyHeight)), (Math.floor(Math.random()*bodyWidth)); } );
   });
 
   $('.lineupButton').click(function(){
@@ -48,10 +52,26 @@ $(document).ready(function(){
   $('span').hover( function(){ $(this).toggleClass("expand")
   });
 
-  function fadeIn(){
-    $('.bg').toggleClass("slideExpandUp");
-  };
-  setInterval(fadeIn(),8000);
+  $('.pairupButton').click(function(){
+    var sortedDancers = [];
+
+    sortedDancers = _.sortBy(dancers,function(dancer, index, dancers){
+    return Number(Math.sqrt(dancer.height * dancer.height + dancer.left * dancer.left).toFixed(3));
+    });
+    if(sortedDancers.length >=2){
+      var now = sortedDancers[i];
+      var next = sortedDancers[i+1];
+      now.height = next.height;
+      now.left = next.left;
+    }
+  });
+
+
+
+  // function fadeIn(){
+  //   $('.bg').toggleClass("slideExpandUp");
+  // };
+  // setInterval(fadeIn(),8000);
 
 
 

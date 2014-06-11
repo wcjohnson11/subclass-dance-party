@@ -1,6 +1,8 @@
 var makeSlideDancer = function(top, left, timeBetweenSteps){
 
   var slideDancer = new makeDancer(top, left, timeBetweenSteps);
+  //slideDancer.id = counter++;
+
   slideDancer.oldStep = slideDancer.step;
   slideDancer.step = undefined;
   slideDancer.step = function(){
