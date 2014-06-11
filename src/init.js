@@ -52,24 +52,29 @@ $(document).ready(function(){
   $('span').hover( function(){ $(this).toggleClass("expand")
   });
 
-  $('.pairupButton').click(function(){
-    var sortedDancers = [];
 
-    sortedDancers = _.sortBy(dancers,function(dancer, index, dancers){
+  //naive pairing function
+  $('.pairupButton').click(function(){
+
+
+    var sortedDancers = _.sortBy(dancers,function(dancer, index, dancers){
     return Number(Math.sqrt(dancer.height * dancer.height + dancer.left * dancer.left).toFixed(3));
     });
     for (var i = 0; i < sortedDancers.length; i +=2){
         var now = sortedDancers[i];
         var next = sortedDancers[i+1];
+        if (now === undefined){
+          $(sortedDancers[i]).addClass('expand');
+          return;
+        } else if (next === undefined){
+          $(sortedDancers[i+1]).addClass('expand');
+          return;
+        }
         var randomHeight = Math.floor(Math.random()*bodyHeight);
         var randomWidth = Math.floor(Math.random()*bodyWidth);
-        now.setPosition(randomHeight, randomWidth);
-        next.setPosition(randomHeight, randomWidth);
-        if (now === undefined){
-          now.addClass('expand');
-        } else if (next === undefined){
-          next.addClass('expand');
-        }
+       // now.height =
+        //now.setPosition(randomHeight, randomWidth);
+        next.setPosition(now.height, now.left);
     }
   });
 

@@ -13,7 +13,7 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps){
       // other effects you can use on a jQuery-wrapped html tag.
       this.$node.toggle();
       if ($(this.$node).is(':visible')){
-        this.$node.toggleClass("green");
+      //  this.$node.toggleClass("green");
       }
     };
   return blinkyDancer;
