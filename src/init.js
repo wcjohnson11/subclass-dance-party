@@ -58,6 +58,12 @@ $(document).ready(function(){
     $(this).toggleClass('expand');
   });
 
+    $('.syncupButton').click(function(){
+      var randomTime = Math.random()*1000;
+    _.each(dancers,function(dancer){dancer._timeBetweenSteps = randomTime;});
+  });
+
+
   //naive pairing function
   $('.pairupButton').click(function(){
 
